@@ -50,6 +50,12 @@ const createCard = function(cat, parent) {
 	const name = document.createElement("h3");
 	name.innerText = cat.name;
 
+	const description = document.createElement("p");
+	description.innerText = cat.description;
+
+	const age = document.createElement("h4");
+	age.innerText = `Возраст: ${cat.age}`;
+
 	let like = "";
 	like.onclick = () => {
 		//....
@@ -73,7 +79,7 @@ const createCard = function(cat, parent) {
 		updForm.setAttribute("data-id", cat.id);
 	})
 
-	card.append(img, name, del, upd);
+	card.append( name, img, age,  description,  del, upd);
 	parent.append(card);
 }
 
@@ -92,7 +98,7 @@ const showForm = function(data) {
 }
 
 
-createCard({name: "Вася", img_link: ""}, container);
+//createCard({name: "Вася", img_link: ""}, container);
 
 
 // запрос на сервер
